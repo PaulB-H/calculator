@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./style.css" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div id="root">
+			<h3>Calculator</h3>
+			<div id="calcwrap">
+				<input id="resultdiv" disabled />
+				<input id="numinput" type="number" />
+				<div id="operators">
+					<button onclick="operate('+')">+</button>
+					<button onclick="operate('-')">-</button>
+					<button onclick="operate('*')">*</button>
+					<button onclick="operate('/')">/</button>
+				</div>
+				<button onclick="solve()">=</button>
+				<button onclick="reset()">C</button>
+			</div>
+		</div>
+		<script src="./script.js"></script>
+	</body>
+</html>
