@@ -2,6 +2,7 @@
 console.clear();
 
 const input = document.getElementById("numinput");
+input.focus();
 const result = document.getElementById("resultdiv");
 input.value = "";
 result.value = "";
@@ -36,6 +37,7 @@ function operate(symbol) {
 		}
 		
 	}
+	input.focus();
 }
 
 function solve() {
