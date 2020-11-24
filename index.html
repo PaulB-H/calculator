@@ -13,13 +13,17 @@
 				<textarea id="resultdiv" wrap="soft" rows="2" disabled> </textarea>
 				<input id="numinput" type="number" />
 				<div id="operators">
-					<button onclick="operate('+')">+</button>
-					<button onclick="operate('-')">-</button>
 					<button onclick="operate('*')">*</button>
 					<button onclick="operate('/')">/</button>
 				</div>
-				<button onclick="solve()">=</button>
-				<button onclick="reset()">C</button>
+				<div>
+					<button onclick="operate('-')">-</button>
+					<button onclick="reset()">C</button>
+				</div>
+				<div>
+					<button onclick="operate('+')">+</button>
+					<button onclick="solve()">=</button>
+				</div>
 			</div>
 		</div>
 		<script src="./script.js"></script>
