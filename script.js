@@ -22,7 +22,7 @@ function operate(symbol) {
 	if (input.value === "" && query.length < 1) {
 		console.log("No input!");
 		// If last query item is num, push symbol first
-	} else if (res === 0) {
+	} else if (res === 0 || res === 1) {
 		query.push(symbol);
 
 		if (input.value != "") {
@@ -51,6 +51,7 @@ function solve() {
 	let res;
 	if (query[query.length - 1] != undefined) {
 		res = query[query.length - 1].search(operatePatt);
+		console.log(res);
 	}
 	// If input is NOT empty
 	// AND
