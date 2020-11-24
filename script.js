@@ -15,6 +15,8 @@ function operate(symbol) {
 	let res;
 
 	if (len >= 0) {
+		// string.search(pattern) returns -1 if no match
+		// or the index num of the first match in string
 		res = query[len].search(numPatt);
 		console.log(res);
 	}
@@ -81,7 +83,7 @@ function solve() {
 		// 	query.push(popped);
 		// }
 	}
-
+	input.focus();
 	console.log(query);
 }
 
@@ -90,4 +92,5 @@ function reset() {
 	input.value = "";
 	result.value = "";
 	query = [];
+	input.focus();
 }
