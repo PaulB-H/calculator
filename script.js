@@ -123,7 +123,7 @@ function decimal() {
 }
 
 function negate() {
-	if (input.value === 0) {
+	if (input.value != 0) {
 		input.value *= -1;
 	}
 }
