@@ -97,13 +97,18 @@ function reset() {
 }
 
 function numpad(num) {
-	console.log(`Adding ${num} to input.value`);
-	if (decimalQue) {
-		input.value += "." + num;
-		decimalQue = false;
+	if (input.value.charAt(0) === "0" && num === "0") {
+		// Do nothing
 	} else {
-		input.value += num;
+		console.log(`Adding ${num} to input.value`);
+		if (decimalQue) {
+			input.value += "." + num;
+			decimalQue = false;
+		} else {
+			input.value += num;
+		}
 	}
+
 	console.log(`input.value is now ${input.value}`);
 }
 
@@ -111,10 +116,17 @@ function decimal() {
 	let decimalPatt = /[.]+/g;
 	let decimals = input.value.search(decimalPatt);
 	console.log(decimals);
-	if (decimals === -1) {
+	if (decimals === -1 && input.value === "") {
 		input.value += "0.";
 		decimalQue = true;
+	} else {
+		input.value += ".";
+		decimalQue = true;
 	}
+}
+
+function negate() {
+	input.value *= -1;
 }
 
 document.getElementById("numinput").addEventListener("keypress", function (e) {
