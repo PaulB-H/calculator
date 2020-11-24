@@ -19,7 +19,6 @@ function operate(symbol) {
 		// string.search(pattern) returns -1 if no match
 		// or the index num of the first match in string
 		res = query[len].search(numPatt);
-		console.log(res);
 	}
 
 	if (input.value === "" && query.length < 1) {
@@ -43,8 +42,7 @@ function operate(symbol) {
 			result.value = query.join(" ");
 		}
 	}
-	// input.focus();
-	console.log(query);
+	// input.focus(); maybe add this on external keyboard only
 }
 
 function solve() {
@@ -54,7 +52,6 @@ function solve() {
 	let res;
 	if (query[query.length - 1] != undefined) {
 		res = query[query.length - 1].search(operatePatt);
-		console.log(res);
 	}
 	// If input is NOT empty
 	// AND
@@ -84,8 +81,6 @@ function solve() {
 		// 	query.push(popped);
 		// }
 	}
-	// input.focus();
-	console.log(query);
 }
 
 function reset() {
@@ -93,21 +88,18 @@ function reset() {
 	input.value = "";
 	result.value = "";
 	query = [];
-	// input.focus();
 }
 
 function numpad(num) {
 	console.log(input.value.charAt(0));
 	if (
-		input.value.charAt(0) === "0" &&
+		// input.value.charAt(0) === "0" &&
 		num === 0 &&
-		input.value.length === 1 &&
+		input.value.length === 0 &&
 		decimalQue === false
 	) {
 		// Do nothing
-		console.log("doing nothing");
 	} else {
-		console.log(`Adding ${num} to input.value`);
 		if (decimalQue) {
 			input.value += "." + num;
 			decimalQue = false;
@@ -115,14 +107,11 @@ function numpad(num) {
 			input.value += num;
 		}
 	}
-
-	console.log(`input.value is now ${input.value}`);
 }
 
 function decimal() {
 	let decimalPatt = /[.]+/g;
 	let decimals = input.value.search(decimalPatt);
-	console.log(decimals);
 	// Check if there are no decimals yet
 	// and if there is no input yet
 	if (decimals === -1 && input.value === "") {
@@ -140,7 +129,6 @@ function negate() {
 
 document.getElementById("numinput").addEventListener("keypress", function (e) {
 	if (e.key == "Enter") {
-		console.log("Enter pressed");
 		solve();
 	}
 });

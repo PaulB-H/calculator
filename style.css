@@ -43,11 +43,13 @@ body,
 	font-size: 2em;
 	padding: 5px;
 	resize: none;
+	border-radius: 10px;
 }
 #numinput {
 	font-size: 1.5em;
 	height: 12vh;
 	width: 100%;
+	border-radius: 10px;
 }
 
 #calcwrap input {
