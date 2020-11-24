@@ -112,7 +112,7 @@ function decimal() {
 	let decimals = input.value.search(decimalPatt);
 	console.log(decimals);
 	if (decimals === -1) {
-		input.value += ".";
+		input.value += "0.";
 		decimalQue = true;
 	}
 }

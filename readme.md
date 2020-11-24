@@ -30,3 +30,8 @@ To fix this I added separate function for decimal, and a "que" for the decimal a
         decimalQue = true;
       }
     }
+
+I could have changed the input type to text for "easier" decimal handling, but it would have been a lot more working writing the pattern checking for the field.
+<br>
+Also, type number prevents multiple prefexed 000 which stops 0-prefexed octal literal error from crashing eval() func
+["0"-prefixed octal literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Deprecated_octal)
