@@ -42,7 +42,7 @@ function operate(symbol) {
 			result.value = query.join(" ");
 		}
 	}
-	input.focus();
+	// input.focus();
 	console.log(query);
 }
 
