@@ -124,7 +124,9 @@ function decimal() {
 }
 
 function negate() {
-	input.value *= -1;
+	if (input.value === 0) {
+		input.value *= -1;
+	}
 }
 
 document.getElementById("numinput").addEventListener("keypress", function (e) {
