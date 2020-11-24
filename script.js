@@ -97,7 +97,8 @@ function reset() {
 }
 
 function numpad(num) {
-	if (input.value.charAt(0) === "0" && num === "0") {
+	console.log(input.value.charAt(0));
+	if (input.value.charAt(0) === "0" && num === 0) {
 		// Do nothing
 	} else {
 		console.log(`Adding ${num} to input.value`);
@@ -116,6 +117,8 @@ function decimal() {
 	let decimalPatt = /[.]+/g;
 	let decimals = input.value.search(decimalPatt);
 	console.log(decimals);
+	// Check if there are no decimals yet
+	// and if there is no input yet
 	if (decimals === -1 && input.value === "") {
 		input.value += "0.";
 		decimalQue = true;
