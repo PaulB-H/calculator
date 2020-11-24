@@ -6,6 +6,7 @@ input.focus();
 const result = document.getElementById("resultdiv");
 input.value = "";
 result.value = "";
+let decimalQue = false;
 
 let query = [];
 
@@ -96,22 +97,24 @@ function reset() {
 }
 
 function numpad(num) {
-	let numinput = document.getElementById("numinput");
-	let pattern = /[.]+/g;
-	let decimals = [];
-	decimals = numinput.value.match(pattern);
-	console.log(decimals);
-	if (decimals != null) {
-		if (decimals.length <= 1 && num != ".") {
-			numinput.value += num;
-		}
+	console.log(`Adding ${num} to input.value`);
+	if (decimalQue) {
+		input.value += "." + num;
+		decimalQue = false;
 	} else {
-		numinput.value += num;
+		input.value += num;
 	}
-	// console.log(decimals.length);
-	// if (decimals.length <= 1 && num != ".") {
-	// 	numinput.value += num;
-	// }
+	console.log(`input.value is now ${input.value}`);
+}
+
+function decimal() {
+	let decimalPatt = /[.]+/g;
+	let decimals = input.value.search(decimalPatt);
+	console.log(decimals);
+	if (decimals === -1) {
+		input.value += ".";
+		decimalQue = true;
+	}
 }
 
 document.getElementById("numinput").addEventListener("keypress", function (e) {
