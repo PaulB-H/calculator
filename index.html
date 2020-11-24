@@ -11,7 +11,7 @@
 			<h3>Calculator</h3>
 			<div id="calcwrap">
 				<textarea id="resultdiv" wrap="soft" rows="2" disabled> </textarea>
-				<input id="numinput" type="number" />
+				<input id="numinput" type="decimal" />
 				<div id="buttonwrap">
 					<div
 						style="
@@ -35,7 +35,9 @@
 						<button onclick="numpad(1)">1</button>
 						<button onclick="numpad(2)">2</button>
 						<button onclick="numpad(3)">3</button>
+						<button disabled></button>
 						<button onclick="numpad(0)" style="grid-area: Zero">0</button>
+						<button onclick="numpad('.')">.</button>
 					</div>
 
 					<div id="operators">

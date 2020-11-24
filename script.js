@@ -95,6 +95,25 @@ function reset() {
 	input.focus();
 }
 
+function numpad(num) {
+	let numinput = document.getElementById("numinput");
+	let pattern = /[.]+/g;
+	let decimals = [];
+	decimals = numinput.value.match(pattern);
+	console.log(decimals);
+	if (decimals != null) {
+		if (decimals.length <= 1 && num != ".") {
+			numinput.value += num;
+		}
+	} else {
+		numinput.value += num;
+	}
+	// console.log(decimals.length);
+	// if (decimals.length <= 1 && num != ".") {
+	// 	numinput.value += num;
+	// }
+}
+
 document.getElementById("numinput").addEventListener("keypress", function (e) {
 	if (e.key == "Enter") {
 		console.log("Enter pressed");
