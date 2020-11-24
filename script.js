@@ -16,10 +16,12 @@ function operate(symbol) {
 
 	if (len >= 0) {
 		res = query[len].search(numPatt);
+		console.log(res);
 	}
 
 	if (input.value === "" && query.length < 1) {
 		console.log("No input!");
+		// If last query item is num, push symbol first
 	} else if (res === 0) {
 		query.push(symbol);
 
@@ -28,6 +30,8 @@ function operate(symbol) {
 			input.value = "";
 		}
 		result.value = query.join(" ");
+
+		// Else push the input number first
 	} else {
 		if (input.value != "") {
 			query.push(input.value);
@@ -41,23 +45,30 @@ function operate(symbol) {
 }
 
 function solve() {
+	// Check for anything OTHER than operator
+	// Returns -1 if operator found, 0 otherwise
 	let operatePatt = /[^.+/*-]/g;
-	let res = query[query.length - 1].search(operatePatt);
-	console.log(res);
-
+	let res;
+	if (query[query.length - 1] != undefined) {
+		res = query[query.length - 1].search(operatePatt);
+	}
+	// If input is NOT empty
+	// AND
+	// last item in query is an operator
 	if (input.value != "" && res == -1) {
 		query.push(input.value);
 		input.value = "";
 	}
 
-	// Check for anything other than operator
-
 	let popped;
-	res = query[query.length - 1].search(operatePatt);
-
+	if (query[query.length - 1] != undefined) {
+		res = query[query.length - 1].search(operatePatt);
+	}
+	// If last array item is operator, pop it off before running eval
 	if (res === -1) {
 		popped = query.pop();
 	}
+	result.value = query; // Update view if we tossed trailing operator
 
 	if (query.length >= 3) {
 		let str = query.join(" ");
@@ -65,11 +76,11 @@ function solve() {
 		result.value = ans;
 		query = [];
 		query.push(ans.toString());
+		// if (popped) {
+		// 	query.push(popped);
+		// }
 	}
 
-	if (popped) {
-		query.push(popped);
-	}
 	console.log(query);
 }
 
