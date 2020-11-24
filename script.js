@@ -83,7 +83,7 @@ function solve() {
 		// 	query.push(popped);
 		// }
 	}
-	input.focus();
+	// input.focus();
 	console.log(query);
 }
 
@@ -92,7 +92,7 @@ function reset() {
 	input.value = "";
 	result.value = "";
 	query = [];
-	input.focus();
+	// input.focus();
 }
 
 function numpad(num) {
