@@ -15,9 +15,13 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
 	-moz-appearance: textfield;
 }
+html,
+body,
+#root {
+	height: 100%;
+}
 
 #root {
-	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
