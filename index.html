@@ -12,17 +12,40 @@
 			<div id="calcwrap">
 				<textarea id="resultdiv" wrap="soft" rows="2" disabled> </textarea>
 				<input id="numinput" type="number" />
-				<div id="operators">
-					<button onclick="operate('*')">*</button>
-					<button onclick="operate('/')">/</button>
-				</div>
-				<div>
-					<button onclick="operate('-')">-</button>
-					<button onclick="reset()">C</button>
-				</div>
-				<div>
-					<button onclick="operate('+')">+</button>
-					<button onclick="solve()">=</button>
+				<div id="buttonwrap">
+					<div
+						style="
+							display: grid;
+							grid-template-columns: 1fr 1fr 1fr;
+							grid-template-rows: 1fr 1fr 1fr;
+							gap: 0px 0px;
+							grid-template-areas:
+								'. . .'
+								'. . .'
+								'. . .'
+								'. Zero .';
+						"
+					>
+						<button onclick="numpad(7)">7</button>
+						<button onclick="numpad(8)">8</button>
+						<button onclick="numpad(9)">9</button>
+						<button onclick="numpad(4)">4</button>
+						<button onclick="numpad(5)">5</button>
+						<button onclick="numpad(6)">6</button>
+						<button onclick="numpad(1)">1</button>
+						<button onclick="numpad(2)">2</button>
+						<button onclick="numpad(3)">3</button>
+						<button onclick="numpad(0)" style="grid-area: Zero">0</button>
+					</div>
+
+					<div id="operators">
+						<button onclick="reset()">C</button>
+						<button onclick="operate('/')">/</button>
+						<button onclick="operate('*')">*</button>
+						<button onclick="operate('-')">-</button>
+						<button onclick="operate('+')">+</button>
+						<button onclick="solve()">=</button>
+					</div>
 				</div>
 			</div>
 		</div>
