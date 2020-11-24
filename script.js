@@ -98,8 +98,14 @@ function reset() {
 
 function numpad(num) {
 	console.log(input.value.charAt(0));
-	if (input.value.charAt(0) === "0" && num === 0 && input.length <= 1) {
+	if (
+		input.value.charAt(0) === "0" &&
+		num === 0 &&
+		input.value.length === 1 &&
+		decimalQue === false
+	) {
 		// Do nothing
+		console.log("doing nothing");
 	} else {
 		console.log(`Adding ${num} to input.value`);
 		if (decimalQue) {
