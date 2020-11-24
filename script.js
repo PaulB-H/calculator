@@ -11,45 +11,49 @@ let query = [];
 
 function operate(symbol) {
 	let numPatt = /[0-9]/g;
-	let len = query.length -1;
+	let len = query.length - 1;
 	let res;
 
-	if(len>=0){
+	if (len >= 0) {
 		res = query[len].search(numPatt);
 	}
 
 	if (input.value === "" && query.length < 1) {
 		console.log("No input!");
-	} else if (res===0){
-		query.push(symbol);	
+	} else if (res === 0) {
+		query.push(symbol);
 
-		if(input.value != ""){
+		if (input.value != "") {
 			query.push(input.value);
 			input.value = "";
 		}
 		result.value = query.join(" ");
 	} else {
-		if(input.value != ""){
+		if (input.value != "") {
 			query.push(input.value);
 			input.value = "";
 			query.push(symbol);
-			result.value = query.join(" ");	
+			result.value = query.join(" ");
 		}
-		
 	}
 	input.focus();
+	console.log(query);
 }
 
 function solve() {
-	if (input.value != "") {
+	let operatePatt = /[^.+/*-]/g;
+	let res = query[query.length - 1].search(operatePatt);
+	console.log(res);
+
+	if (input.value != "" && res == -1) {
 		query.push(input.value);
 		input.value = "";
 	}
 
 	// Check for anything other than operator
-	let operatePatt = /[^.+/*-]/g;
-	let res = query[query.length - 1].search(operatePatt);
+
 	let popped;
+	res = query[query.length - 1].search(operatePatt);
 
 	if (res === -1) {
 		popped = query.pop();
@@ -63,9 +67,10 @@ function solve() {
 		query.push(ans.toString());
 	}
 
-	// if (popped) {
-	// 	query.push(popped);
-	// }
+	if (popped) {
+		query.push(popped);
+	}
+	console.log(query);
 }
 
 function reset() {
