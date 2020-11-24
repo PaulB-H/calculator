@@ -98,7 +98,7 @@ function reset() {
 
 function numpad(num) {
 	console.log(input.value.charAt(0));
-	if (input.value.charAt(0) === "0" && num === 0) {
+	if (input.value.charAt(0) === "0" && num === 0 && input.length <= 1) {
 		// Do nothing
 	} else {
 		console.log(`Adding ${num} to input.value`);
