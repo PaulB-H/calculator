@@ -32,11 +32,13 @@ input[type="number"] {
 }
 
 #resultdiv {
+	margin-top: 15px;
 	max-width: 100vw;
 	height: 20vh;
 	color: black;
 	font-size: 2em;
 	padding: 5px;
+	resize: none;
 }
 #numinput {
 	font-size: 1.5em;
