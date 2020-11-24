@@ -84,14 +84,13 @@ function solve() {
 }
 
 function reset() {
-	console.log("reset called");
 	input.value = "";
 	result.value = "";
 	query = [];
+	decimalQue = false;
 }
 
 function numpad(num) {
-	console.log(input.value.charAt(0));
 	if (
 		// input.value.charAt(0) === "0" &&
 		num === 0 &&
