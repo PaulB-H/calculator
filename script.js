@@ -94,3 +94,10 @@ function reset() {
 	query = [];
 	input.focus();
 }
+
+document.getElementById("numinput").addEventListener("keypress", function (e) {
+	if (e.key == "Enter") {
+		console.log("Enter pressed");
+		solve();
+	}
+});
