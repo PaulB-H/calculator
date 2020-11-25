@@ -2,10 +2,11 @@
 console.clear();
 
 const input = document.getElementById("numinput");
-input.focus();
+// input.focus();
 const result = document.getElementById("resultdiv");
 input.value = "";
 result.value = "";
+let decimalbutton = document.getElementById("decimalbutton");
 let decimalQue = false;
 
 let query = [];
@@ -47,7 +48,7 @@ function operate(symbol) {
 
 function solve() {
 	// Check for anything OTHER than operator
-	// Returns -1 if operator found, 0 otherwise
+	// Returns -1 if operator found
 	let operatePatt = /[^.+/*-]/g;
 	let res;
 	if (query[query.length - 1] != undefined) {
@@ -88,20 +89,17 @@ function reset() {
 	result.value = "";
 	query = [];
 	decimalQue = false;
+	decimalbutton.style.background = "";
 }
 
 function numpad(num) {
-	if (
-		// input.value.charAt(0) === "0" &&
-		num === 0 &&
-		input.value.length === 0 &&
-		decimalQue === false
-	) {
+	if (num === 0 && input.value.length === 0 && decimalQue === false) {
 		// Do nothing
 	} else {
 		if (decimalQue) {
 			input.value += "." + num;
 			decimalQue = false;
+			decimalbutton.style.background = "";
 		} else {
 			input.value += num;
 		}
@@ -111,14 +109,9 @@ function numpad(num) {
 function decimal() {
 	let decimalPatt = /[.]+/g;
 	let decimals = input.value.search(decimalPatt);
-	// Check if there are no decimals yet
-	// and if there is no input yet
-	if (decimals === -1 && input.value === "") {
-		input.value += "0.";
+	if (decimals === -1) {
 		decimalQue = true;
-	} else {
-		input.value += ".";
-		decimalQue = true;
+		decimalbutton.style.background = "#ffff8f";
 	}
 }
 
