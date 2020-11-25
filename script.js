@@ -109,7 +109,10 @@ function numpad(num) {
 function decimal() {
 	let decimalPatt = /[.]+/g;
 	let decimals = input.value.search(decimalPatt);
-	if (decimals === -1) {
+	if (decimalQue) {
+		decimalQue = false;
+		decimalbutton.style.background = "";
+	} else if (decimals === -1) {
 		decimalQue = true;
 		decimalbutton.style.background = "#ffff8f";
 	}
