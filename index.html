@@ -1,72 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="./style.css" />
-		<title>Calc by Paul</title>
-		<link rel="preconnect" href="https://fonts.gstatic.com" />
-		<link
-			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
-			rel="stylesheet"
-		/>
-	</head>
-	<body>
-		<div id="root">
-			<div id="footer" style="position: absolute; top: -5px">
-				<sub><a href="https://www.webbypaul.ca">devbypaul.ca</a></sub>
-			</div>
-			<div id="calcwrap">
-				<textarea id="resultdiv" wrap="soft" rows="2" disabled> </textarea>
-				<input id="numinput" type="number" step="any" />
-				<div id="buttonwrap">
-					<div
-						style="
-							display: grid;
-							grid-template-columns: 1fr 1fr 1fr;
-							grid-template-rows: 1fr 1fr 1fr;
-							gap: 0px 0px;
-							grid-template-areas:
-								'. . .'
-								'. . .'
-								'. . .'
-								'. . .'
-								'. . .'
-								'. Zero .';
-						"
-					>
-						<button disabled></button>
-						<button disabled></button>
-						<button disabled></button>
-						<button disabled></button>
-						<button disabled></button>
-						<button disabled></button>
-						<button onclick="numpad(7)">7</button>
-						<button onclick="numpad(8)">8</button>
-						<button onclick="numpad(9)">9</button>
-						<button onclick="numpad(4)">4</button>
-						<button onclick="numpad(5)">5</button>
-						<button onclick="numpad(6)">6</button>
-						<button onclick="numpad(1)">1</button>
-						<button onclick="numpad(2)">2</button>
-						<button onclick="numpad(3)">3</button>
-						<button onclick="negate()">Neg</button>
-						<button onclick="numpad(0)" style="grid-area: Zero">0</button>
-						<!-- <button onclick="numpad('.')">.</button> -->
-						<button id="decimalbutton" onclick="decimal()">.</button>
-					</div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Calc by Paul</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="root">
+      <div id="footer" style="position: absolute; top: -5px">
+        <sub><a href="https://www.devbypaul.ca">devbypaul.ca</a></sub>
+      </div>
+      <div id="calcwrap">
+        <textarea id="resultdiv" wrap="soft" rows="2" disabled> </textarea>
+        <input id="numinput" type="number" step="any" />
+        <div id="buttonwrap">
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr;
+              grid-template-rows: 1fr 1fr 1fr;
+              gap: 0px 0px;
+              grid-template-areas:
+                '. . .'
+                '. . .'
+                '. . .'
+                '. . .'
+                '. . .'
+                '. Zero .';
+            "
+          >
+            <button disabled></button>
+            <button disabled></button>
+            <button disabled></button>
+            <button disabled></button>
+            <button disabled></button>
+            <button disabled></button>
+            <button onclick="numpad(7)">7</button>
+            <button onclick="numpad(8)">8</button>
+            <button onclick="numpad(9)">9</button>
+            <button onclick="numpad(4)">4</button>
+            <button onclick="numpad(5)">5</button>
+            <button onclick="numpad(6)">6</button>
+            <button onclick="numpad(1)">1</button>
+            <button onclick="numpad(2)">2</button>
+            <button onclick="numpad(3)">3</button>
+            <button onclick="negate()">Neg</button>
+            <button onclick="numpad(0)" style="grid-area: Zero">0</button>
+            <!-- <button onclick="numpad('.')">.</button> -->
+            <button id="decimalbutton" onclick="decimal()">.</button>
+          </div>
 
-					<div id="operators">
-						<button style="background: #ff8a8a" onclick="reset()">C</button>
-						<button onclick="operate('/')">/</button>
-						<button onclick="operate('*')">*</button>
-						<button onclick="operate('-')">-</button>
-						<button onclick="operate('+')">+</button>
-						<button style="background: #91ffa3" onclick="solve()">=</button>
-					</div>
-				</div>
-			</div>
-		</div>
-		<script src="./script.js"></script>
-	</body>
+          <div id="operators">
+            <button style="background: #ff8a8a" onclick="reset()">C</button>
+            <button onclick="operate('/')">/</button>
+            <button onclick="operate('*')">*</button>
+            <button onclick="operate('-')">-</button>
+            <button onclick="operate('+')">+</button>
+            <button style="background: #91ffa3" onclick="solve()">=</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
 </html>
