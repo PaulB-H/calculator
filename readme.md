@@ -15,7 +15,6 @@ break.
 </p>
 <hr />
 <h4>Links</h4>
-<sup>Note: Live site may take 30 seconds to load as server spins up</sup><br>
 <a href="https://paulb-h.github.io/calculator/" target="_blank">
 	Live Site
 </a>
